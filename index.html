@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hoosier Lottery Numbers</title>
+</head>
+<body>
+    <h1>Hoosier Lottery Numbers (Using For Loop)</h1>
+    <h2 id="forLoopNumbers"></h2>
+
+    <h1>Hoosier Lottery Numbers (Using While Loop)</h1>
+    <h2 id="whileLoopNumbers"></h2>
+
+    <script>
+        // Function to generate a random number between min and max (inclusive)
+        function getRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Part 1: Using a for loop
+        let forLoopNumbers = "";
+        for (let i = 0; i < 6; i++) {
+            const randomNumber = getRandomNumber(1, 49);
+            forLoopNumbers += randomNumber + " ";
+        }
+        document.getElementById("forLoopNumbers").textContent = forLoopNumbers;
+
+        // Part 2: Using a while loop
+        let whileLoopNumbers = "";
+        let count = 0;
+        while (count < 6) {
+            const randomNumber = getRandomNumber(1, 49);
+            whileLoopNumbers += randomNumber + " ";
+            count++;
+        }
+        document.getElementById("whileLoopNumbers").textContent = whileLoopNumbers;
+    </script>
+</body>
+</html>
